@@ -1,11 +1,18 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
+import SlideShow from "~/Components/SlideShow";
 
 import { api } from "~/utils/api";
 
 const Home: NextPage = () => {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
+
+  const pictures = [
+    'https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&width=1200',
+    'https://carwow-uk-wp-3.imgix.net/18015-MC20BluInfinito-scaled-e1666008987698.jpg',
+    'https://cdn.motor1.com/images/mgl/mrz1e/s3/coolest-cars-feature.jpg'
+  ];
 
   return (
     <>
@@ -16,7 +23,8 @@ const Home: NextPage = () => {
        
 
       </Head>
-     <main>
+     <main className="w-full h-full">
+     <SlideShow pictures={pictures} />
       test123
      </main>
     </>
